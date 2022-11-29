@@ -14,6 +14,36 @@
     margin: 0 auto;
   }
   &__logo {
-	
+  }
+  &__phone {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  &__logo a,
+  &__phone a {
+    font-size: 0.89rem;
+    line-height: 1.1;
+    font-style: normal;
+    color: #533738;
+  }
+  &__phone::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 3px;
+    width: 0%;
+    left: 50%;
+    background-color: #533738;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz--transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  &__phone:hover:after,
+  &__phone:focus:after {
+    width: 100%;
   }
 }
