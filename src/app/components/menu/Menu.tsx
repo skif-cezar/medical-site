@@ -16,7 +16,19 @@ export const Menu: React.FC = () => {
     <nav className={MENU_STYLES}>
       <ul className={MENU_LIST_STYLES}>
         <li className={MENU_ITEM_STYLES}>
-          <NavLink className={MENU_LINK_STYLES} to="/">О Центре</NavLink>
+          <NavLink className={MENU_LINK_STYLES} to="/about">
+            О Центре
+          </NavLink>
+        </li>
+        <li className={MENU_ITEM_STYLES}>
+          <NavLink className={MENU_LINK_STYLES} to="/employees">
+            Сотрудники
+          </NavLink>
+        </li>
+        <li className={MENU_ITEM_STYLES}>
+          <NavLink className={MENU_LINK_STYLES} to="/tests">
+            Тесты
+          </NavLink>
         </li>
       </ul>
     </nav>
