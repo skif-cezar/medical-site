@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router} from "react-router-dom";
-import {Header} from "src/app/components/header/Header";
+import {Layout} from "src/app/logic/layout/Layout";
 
 /**
  * The main component in app
@@ -8,7 +8,7 @@ import {Header} from "src/app/components/header/Header";
 export const App: React.FC = () => {
   return (
     <Router>
-      <Header />
+      <Layout />
     </Router>
   );
 };

@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
