@@ -1,0 +1,42 @@
+.promo {
+  width: 100%;
+  height: 715px;
+  background-image: url("https://img.freepik.com/free-photo/front-view-of-woman-holding-paper-heart-with-heartbeat_23-2148635119.jpg?w=996&t=st=1669826366~exp=1669826966~hmac=4a77f3d353f67ae4853f855878070f4ced64aad98be91bb92de5147958a66178");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-color: #e5e5e5;
+}
+
+.container {
+  max-width: 534px;
+  margin-top: 152px;
+  margin-left: 184px;
+}
+
+.title {
+  font-size: 2.78rem;
+  line-height: 1.24;
+  color: #533738;
+}
+
+.description {
+  max-width: 440px;
+  margin-top: 24px;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
