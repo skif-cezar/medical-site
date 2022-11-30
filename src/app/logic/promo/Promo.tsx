@@ -9,9 +9,9 @@ import {Button} from "src/app/components/button/Button";
 export const Promo: React.FC = () => {
   const PROMO_STYLES = clsx(styles.promo);
   const TITLE_HIDDEN_STYLES = clsx(styles.hidden);
-  const CONTAINER_STYLES = clsx(styles.container);
-  const TITLE_STYLES = clsx(styles.title);
-  const DESCRIPTION_STYLES = clsx(styles.description);
+  const CONTAINER_STYLES = clsx(styles.promo__container);
+  const TITLE_STYLES = clsx(styles.promo__title);
+  const DESCRIPTION_STYLES = clsx(styles.promo__description);
 
   const handleclick = (): void => {
     // eslint-disable-next-line no-alert
