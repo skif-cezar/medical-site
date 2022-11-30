@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "src/app/logic/promo/Promo.module.scss";
+import {Button} from "src/app/components/button/Button";
 
 /**
  * Promo section
@@ -12,6 +13,11 @@ export const Promo: React.FC = () => {
   const TITLE_STYLES = clsx(styles.title);
   const DESCRIPTION_STYLES = clsx(styles.description);
 
+  const handleclick = (): void => {
+    // eslint-disable-next-line no-alert
+    alert(123);
+  };
+
   return (
     <section className={PROMO_STYLES}>
       <h1 className={TITLE_HIDDEN_STYLES}>Медицинское учреждение</h1>
@@ -21,6 +27,7 @@ export const Promo: React.FC = () => {
           Медицинский центр общего профиля. Помогаем пациентам по всем направлениям. Наши
           специалисты — врачи с 20-тилетним стажем.
         </p>
+        <Button text="Оставить заявку" onClick={handleclick} />
       </div>
     </section>
   );
