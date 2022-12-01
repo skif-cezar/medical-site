@@ -4,6 +4,7 @@ import styles from "src/app/logic/layout/Layout.module.scss";
 import {Header} from "src/app/components/header/Header";
 import {Promo} from "src/app/logic/promo/Promo";
 import {About} from "src/app/logic/about/About";
+import {Team} from "src/app/logic/team/Team";
 
 /**
  * Layout component
@@ -18,6 +19,7 @@ export const Layout: React.FC = () => {
       <main className={MAIN_STYLES}>
         <Promo />
         <About />
+        <Team />
       </main>
       <footer>
         footer
