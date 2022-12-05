@@ -18,7 +18,7 @@ export const About: React.FC = () => {
   const STATS__TEXT_STYLES = clsx(styles.statistics__text);
 
   return (
-    <section className={ABOUT_STYLES}>
+    <section className={ABOUT_STYLES} id="about">
       <h2 className={TITLE_STYLES}>О центре</h2>
       <article className={CONTAINER_STYLES}>
         <div className={CONTENT_STYLES}>

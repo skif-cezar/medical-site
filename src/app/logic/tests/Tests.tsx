@@ -12,7 +12,7 @@ export const Tests: React.FC = () => {
   const CONTAINER_STYLES = clsx(styles.tests__container);
 
   return (
-    <section className={TESTS_STYLES}>
+    <section className={TESTS_STYLES} id="tests">
       <h2 className={TITLE_STYLES}>Тесты</h2>
       <div className={CONTAINER_STYLES}>
         <Card text="Скрининговый тест M-CHAT-R на аутизм у детей" />
