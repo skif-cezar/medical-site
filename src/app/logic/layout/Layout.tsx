@@ -5,6 +5,7 @@ import {Header} from "src/app/components/header/Header";
 import {Promo} from "src/app/logic/promo/Promo";
 import {About} from "src/app/logic/about/About";
 import {Team} from "src/app/logic/team/Team";
+import {Footer} from "src/app/logic/footer/Footer";
 
 /**
  * Layout component
@@ -21,9 +22,7 @@ export const Layout: React.FC = () => {
         <About />
         <Team />
       </main>
-      <footer>
-        footer
-      </footer>
+      <Footer />
     </div>
   );
 };
