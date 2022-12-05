@@ -7,6 +7,7 @@ import {About} from "src/app/logic/about/About";
 import {Team} from "src/app/logic/team/Team";
 import {Footer} from "src/app/logic/footer/Footer";
 import {Tests} from "src/app/logic/tests/Tests";
+import {Contacts} from "src/app/logic/contacts/Contacts";
 
 /**
  * Layout component
@@ -23,6 +24,7 @@ export const Layout: React.FC = () => {
         <About />
         <Team />
         <Tests />
+        <Contacts />
       </main>
       <Footer />
     </div>

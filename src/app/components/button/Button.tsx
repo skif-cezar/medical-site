@@ -14,7 +14,8 @@ export interface ButtonProps {
   /**
    * Callback triggered on click
    */
-  onClick: () => void;
+  // eslint-disable-next-line react/require-default-props
+  onClick?: () => void;
 }
 
 /**
