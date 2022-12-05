@@ -1,0 +1,17 @@
+.tests {
+  width: 100%;
+  background-color: #efe6e4;
+  &__title {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2.22rem;
+    line-height: 1.25;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 485px;
+    margin: 0 auto;
+  }
+}

@@ -6,6 +6,7 @@ import {Promo} from "src/app/logic/promo/Promo";
 import {About} from "src/app/logic/about/About";
 import {Team} from "src/app/logic/team/Team";
 import {Footer} from "src/app/logic/footer/Footer";
+import {Tests} from "src/app/logic/tests/Tests";
 
 /**
  * Layout component
@@ -21,6 +22,7 @@ export const Layout: React.FC = () => {
         <Promo />
         <About />
         <Team />
+        <Tests />
       </main>
       <Footer />
     </div>
