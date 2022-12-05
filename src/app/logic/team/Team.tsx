@@ -15,7 +15,7 @@ export const Team: React.FC = () => {
   const DESCRIPTION_STYLES = clsx(styles.team__description);
 
   return (
-    <section className={TEAM_STYLES}>
+    <section className={TEAM_STYLES} id="employees">
       <h2 className={TITLE_STYLES}>Сотрудники</h2>
       <article className={CONTAINER_STYLES}>
         <div className={CONTENT_STYLES}>

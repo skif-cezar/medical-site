@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-scroll";
 import clsx from "clsx";
 import styles from "src/app/components/menu/Menu.module.scss";
 
@@ -16,19 +16,37 @@ export const Menu: React.FC = () => {
     <nav className={MENU_STYLES}>
       <ul className={MENU_LIST_STYLES}>
         <li className={MENU_ITEM_STYLES}>
-          <NavLink className={MENU_LINK_STYLES} to="/about">
+          <Link
+            className={MENU_LINK_STYLES} to="about"
+            activeClass="active"
+            smooth
+            duration={500}
+            offset={-66}
+          >
             О Центре
-          </NavLink>
+          </Link>
         </li>
         <li className={MENU_ITEM_STYLES}>
-          <NavLink className={MENU_LINK_STYLES} to="/employees">
+          <Link
+            className={MENU_LINK_STYLES} to="employees"
+            activeClass="active"
+            smooth
+            duration={500}
+            offset={-66}
+          >
             Сотрудники
-          </NavLink>
+          </Link>
         </li>
         <li className={MENU_ITEM_STYLES}>
-          <NavLink className={MENU_LINK_STYLES} to="/tests">
+          <Link
+            className={MENU_LINK_STYLES} to="tests"
+            activeClass="active"
+            smooth
+            duration={500}
+            offset={-66}
+          >
             Тесты
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </nav>
