@@ -11,6 +11,7 @@ export const Menu: React.FC = () => {
   const MENU_LIST_STYLES = clsx(styles.menu__list);
   const MENU_ITEM_STYLES = clsx(styles.menu__item);
   const MENU_LINK_STYLES = clsx(styles.menu__link);
+  const ACTIVE_LINK_STYLES = clsx(styles.menu__item, styles.active);
 
   return (
     <nav className={MENU_STYLES}>
@@ -18,10 +19,11 @@ export const Menu: React.FC = () => {
         <li className={MENU_ITEM_STYLES}>
           <Link
             className={MENU_LINK_STYLES} to="about"
-            activeClass="active"
+            activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}
             offset={-66}
+            spy
           >
             О Центре
           </Link>
@@ -29,10 +31,11 @@ export const Menu: React.FC = () => {
         <li className={MENU_ITEM_STYLES}>
           <Link
             className={MENU_LINK_STYLES} to="employees"
-            activeClass="active"
+            activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}
             offset={-66}
+            spy
           >
             Сотрудники
           </Link>
@@ -40,10 +43,11 @@ export const Menu: React.FC = () => {
         <li className={MENU_ITEM_STYLES}>
           <Link
             className={MENU_LINK_STYLES} to="tests"
-            activeClass="active"
+            activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}
             offset={-66}
+            spy
           >
             Тесты
           </Link>
