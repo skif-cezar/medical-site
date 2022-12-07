@@ -38,11 +38,11 @@ export const Contacts: React.FC = () => {
         <div className={CONTACTS_ADRESS_STYLES}>
           <iframe
             // eslint-disable-next-line max-len
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1c9626ab20e27bd9e211ca9d329528bf7e79b8dabfc96491ef26d282323b494&amp;source=constructor"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A7364f3369de2a65f2316199f1ca8856e94d65427752efb5fe251c3e22c063c16&amp;source=constructor&amp;lang=ru_RU"
             width="590"
             height="624"
             frameBorder="0"
-            title="г. Санкт-петербург, ул. Большая Конюшенная, 19"
+            title="г. Минск, Долгиновский тракт, 152"
           />
         </div>
       </article>
