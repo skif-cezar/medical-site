@@ -11,11 +11,6 @@ export const About: React.FC = () => {
   const TITLE_STYLES = clsx(styles.about__title);
   const CONTAINER_STYLES = clsx(styles.about__container);
   const CONTENT_STYLES = clsx(styles.about__content);
-  const STATISTICS_STYLES = clsx(styles.statistics);
-  const STATS__LIST_STYLES = clsx(styles.statistics__list);
-  const STATS__ITEM_STYLES = clsx(styles.statistics__item);
-  const STATS__NUMBER_STYLES = clsx(styles.statistics__number);
-  const STATS__TEXT_STYLES = clsx(styles.statistics__text);
 
   return (
     <section className={ABOUT_STYLES} id="about">
@@ -40,24 +35,6 @@ export const About: React.FC = () => {
           </div>
         </div>
       </article>
-      <div className={STATISTICS_STYLES}>
-        <div>
-          <ul className={STATS__LIST_STYLES}>
-            <li className={STATS__ITEM_STYLES}>
-              <span className={STATS__NUMBER_STYLES}>5</span>
-              <span className={STATS__TEXT_STYLES}>лет опыта</span>
-            </li>
-            <li className={STATS__ITEM_STYLES}>
-              <span className={STATS__NUMBER_STYLES}>100</span>
-              <span className={STATS__TEXT_STYLES}>проектов</span>
-            </li>
-            <li className={STATS__ITEM_STYLES}>
-              <span className={STATS__NUMBER_STYLES}>10</span>
-              <span className={STATS__TEXT_STYLES}>наград</span>
-            </li>
-          </ul>
-        </div>
-      </div>
     </section>
   );
 };
