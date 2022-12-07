@@ -19,17 +19,24 @@
     margin: 0 auto;
   }
   &__logo {
+    height: 66px;
+    line-height: 66px;
+    transition: all 0.3s;
     cursor: pointer;
+  }
+  &__logo:hover {
+    transform: translate(0, -5px);
   }
   &__phone {
     position: relative;
     display: inline-block;
+    height: 66px;
+    line-height: 66px;
     cursor: pointer;
   }
-  &__logo a,
   &__phone a {
+    display: block;
     font-size: 0.89rem;
-    line-height: 1.1;
     font-style: normal;
     color: #533738;
   }
