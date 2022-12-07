@@ -18,7 +18,8 @@ export const Menu: React.FC = () => {
       <ul className={MENU_LIST_STYLES}>
         <li className={MENU_ITEM_STYLES}>
           <Link
-            className={MENU_LINK_STYLES} to="about"
+            className={MENU_LINK_STYLES}
+            to="about"
             activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}
@@ -30,7 +31,8 @@ export const Menu: React.FC = () => {
         </li>
         <li className={MENU_ITEM_STYLES}>
           <Link
-            className={MENU_LINK_STYLES} to="employees"
+            className={MENU_LINK_STYLES}
+            to="employees"
             activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}
@@ -42,7 +44,8 @@ export const Menu: React.FC = () => {
         </li>
         <li className={MENU_ITEM_STYLES}>
           <Link
-            className={MENU_LINK_STYLES} to="tests"
+            className={MENU_LINK_STYLES}
+            to="tests"
             activeClass={ACTIVE_LINK_STYLES}
             smooth
             duration={500}

@@ -15,7 +15,7 @@ export const Contacts: React.FC = () => {
   const CONTACTS_ADRESS_STYLES = clsx(styles.contacts__adress);
 
   return (
-    <section className={CONTACTS_STYLES}>
+    <section className={CONTACTS_STYLES} id="contacts">
       <article className={CONTENT_STYLES}>
         <article className={CONTAINER_STYLES}>
           <h2 className={CONTENT_TITLE_STYLES}>Оставить заявку</h2>
