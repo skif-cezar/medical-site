@@ -18,8 +18,8 @@ export const Footer: React.FC = () => {
         <address className={PHONE_STYLES}>
           <a href="tel:+79818574624">+7 (981) 857-46-24</a>
         </address>
-        <address className={ADRESS_STYLES}>г. Санкт-петербург, ул. Большая Конюшенная, 19</address>
-        <div className={COMPANY_STYLES}>ИП Королёва А.А.</div>
+        <address className={ADRESS_STYLES}>г. Минск, Долгиновский тракт, 152</address>
+        <div className={COMPANY_STYLES}>ИП Лапыш О.М., УНП 591909696</div>
       </div>
     </footer>
   );
