@@ -10,6 +10,11 @@ import {Tests} from "src/app/logic/tests/Tests";
 import {Contacts} from "src/app/logic/contacts/Contacts";
 
 /**
+ *  Path to main page
+ */
+export const MAIN_PAGE_PATH = "/";
+
+/**
  * Layout component
  */
 export const Layout: React.FC = () => {
