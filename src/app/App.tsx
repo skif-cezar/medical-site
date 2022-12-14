@@ -10,8 +10,8 @@ export const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path={TEST_PAGE_PATH} element={<TestScreen />} />
         <Route path={MAIN_PAGE_PATH} element={<Layout />} />
+        <Route path={`${TEST_PAGE_PATH}/:id`} element={<TestScreen />} />
       </Routes>
     </Router>
   );

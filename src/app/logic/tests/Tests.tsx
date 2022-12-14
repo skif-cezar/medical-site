@@ -4,7 +4,13 @@ import clsx from "clsx";
 import styles from "src/app/logic/tests/Tests.module.scss";
 import {Card} from "src/app/components/card/Card";
 import {TEST_PAGE_PATH} from "src/app/logic/testScreen/TestScreen";
+import Test from "src/app/Tests.json";
 
+export interface TestsInterface {
+  id: number;
+  title: string;
+  body: string;
+}
 /**
  * Tests section
  */
@@ -14,18 +20,17 @@ export const Tests: React.FC = () => {
   const CONTAINER_STYLES = clsx(styles.tests__container);
 
   return (
-    <section className={TESTS_STYLES}>
+    <section className={TESTS_STYLES} id="tests">
       <h2 className={TITLE_STYLES}>Тесты</h2>
       <div className={CONTAINER_STYLES}>
-        <NavLink to={TEST_PAGE_PATH}>
-          <Card text="Скрининговый тест M-CHAT-R на аутизм у детей" />
-        </NavLink>
-        <NavLink to={TEST_PAGE_PATH}>
-          <Card text="Денверский скрининг-тест нервно-психического развития (DDST)" />
-        </NavLink>
-        <NavLink to={TEST_PAGE_PATH}>
-          <Card text="Рейтинговая шкала аутизма у детей CARS" />
-        </NavLink>
+        {Test &&
+          Test.map((test: TestsInterface) => {
+            return (
+              <NavLink key={test.id} to={`${TEST_PAGE_PATH}/${test.id}`}>
+                <Card text={test.title} />
+              </NavLink>
+            );
+          })}
       </div>
     </section>
   );
