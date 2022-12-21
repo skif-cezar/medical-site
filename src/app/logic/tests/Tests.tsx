@@ -4,13 +4,17 @@ import clsx from "clsx";
 import styles from "src/app/logic/tests/Tests.module.scss";
 import {Card} from "src/app/components/card/Card";
 import {TEST_PAGE_PATH} from "src/app/logic/testScreen/TestScreen";
-import Test from "src/app/Tests.json";
+import TestDTO from "src/app/Tests.json";
 
-export interface TestsInterface {
+/**
+ * TestDTO interface
+ */
+export interface TestDTOInterface {
   id: number;
   title: string;
   body: string;
 }
+
 /**
  * Tests section
  */
@@ -23,8 +27,8 @@ export const Tests: React.FC = () => {
     <section className={TESTS_STYLES} id="tests">
       <h2 className={TITLE_STYLES}>Тесты</h2>
       <div className={CONTAINER_STYLES}>
-        {Test &&
-          Test.map((test: TestsInterface) => {
+        {TestDTO &&
+          TestDTO.map((test: TestDTOInterface) => {
             return (
               <NavLink key={test.id} to={`${TEST_PAGE_PATH}/${test.id}`}>
                 <Card text={test.title} />
