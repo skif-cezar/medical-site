@@ -2,17 +2,20 @@ import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Layout, MAIN_PAGE_PATH} from "src/app/logic/layout/Layout";
 import {TestScreen, TEST_PAGE_PATH} from "src/app/logic/testScreen/TestScreen";
+import {TestProvider} from "src/app/logic/tests/TestStore";
 
 /**
  * The main component in app
  */
 export const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path={MAIN_PAGE_PATH} element={<Layout />} />
-        <Route path={`${TEST_PAGE_PATH}/:id`} element={<TestScreen />} />
-      </Routes>
-    </Router>
+    <TestProvider>
+      <Router>
+        <Routes>
+          <Route path={MAIN_PAGE_PATH} element={<Layout />} />
+          <Route path={`${TEST_PAGE_PATH}/:id`} element={<TestScreen />} />
+        </Routes>
+      </Router>
+    </TestProvider>
   );
 };

@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import clsx from "clsx";
 import styles from "src/app/logic/testScreen/TestScreen.module.scss";
 import {NavLink, useParams} from "react-router-dom";
 import {MAIN_PAGE_PATH} from "src/app/logic/layout/Layout";
 import CardSrc from "src/resources/cards-image.svg";
 import {Button} from "src/app/components/button/Button";
-import TestDTO from "src/app/Tests.json";
+import {TestContext, TestStoreInterface} from "src/app/logic/tests/TestStore";
 
 /**
  *  Path to test page
@@ -23,7 +23,8 @@ export const TestScreen: React.FC = () => {
   const TEST_DESCRIPTION_STYLES = clsx(styles.test__description);
   const CLOSE_STYLES = clsx(styles.close);
 
-  const [isStatus, setIsStatus] = useState(true);
+  const {data}: TestStoreInterface = useContext(TestContext);
+  const [isStatus, setIsStatus] = useState<boolean>(true);
   const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -34,7 +35,7 @@ export const TestScreen: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/typedef
   const {id} = useParams();
   const index = Number(id) - 1;
-  const testData = TestDTO[index];
+  const testData = data[index];
   // eslint-disable-next-line no-console
   console.log(testData);
 
