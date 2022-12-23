@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "Скрининговый тест M-CHAT-R на аутизм у детей",
+    "body": "Пожалуйста, ответьте на вопросы о Вашем ребёнке. При ответах учитывайте, как обычно ведёт себя ребёнок. Если Вы замечали у ребёнка поведение несколько раз, но обычно он/она так себя не ведёт, то, пожалуйста, ответьте \"нет\".",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Если Вы показываете на что-то на другом конце комнаты, Ваш ребёнок смотрит на это? (Пример: если Вы показываете на игрушку или животное, ребёнок смотрит на игрушку или животное?)",
+        "variants": [
+          {
+            "id": 1,
+            "answer": "Да"
+          },
+          {
+            "id": 2,
+            "answer": "Нет"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Вы отмечали у своего ребёнка значительное снижение слуха?",
+        "variants": [
+          {
+            "id": 1,
+            "answer": "Да"
+          },
+          {
+            "id": 2,
+            "answer": "Нет"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Ваш ребёнок играет в воображаемые или сюжетно-ролевые игры? (Пример: притворяется, что пьёт из пустой чашки, изображает, что говорит по телефону, понарошку кормит куклу или плюшевую игрушку?)",
+        "variants": [
+          {
+            "id": 1,
+            "answer": "Да"
+          },
+          {
+            "id": 2,
+            "answer": "Нет"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Денверский скрининг-тест нервно-психического развития (DDST)",
+    "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "id": 3,
+    "title": "Рейтинговая шкала аутизма у детей CARS",
+    "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut"
+  }
+]
