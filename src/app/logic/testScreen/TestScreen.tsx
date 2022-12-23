@@ -21,11 +21,23 @@ export const TestScreen: React.FC = () => {
   const TEST_IMAGE_STYLES = clsx(styles.test__image);
   const TEST_TITLE_STYLES = clsx(styles.test__title);
   const TEST_DESCRIPTION_STYLES = clsx(styles.test__description);
+  const PROGRESS_STYLES = clsx(styles.test__progress);
+  const PROGRESS_PASSED_STYLES = clsx(styles.test__passed);
+  const QUESTION_STYLES = clsx(styles.test__question);
+  const ANSWERS_STYLES = clsx(styles.test__answers);
+  const ANSWER_STYLES = clsx(styles.test__answer);
+  const INPUT_STYLES = clsx(styles.test__input);
+  const LABEL_STYLES = clsx(styles.test__label);
   const CLOSE_STYLES = clsx(styles.close);
 
   const {data}: TestStoreInterface = useContext(TestContext);
   const [isStatus, setIsStatus] = useState<boolean>(true);
   const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
+  const [checkedAnswerId, setCheckedAnswerId] = useState<string | null>(null);
+
+  const resetCheckedAnswerId = (): void => {
+    return setCheckedAnswerId(null);
+  };
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleClick = () => {
@@ -40,10 +52,15 @@ export const TestScreen: React.FC = () => {
   console.log(testData);
 
   const checkAnswer: () => void = () => {
+    if (checkedAnswerId === null) {
+      return;
+    }
+
     const isMoreQuestionsAvailable: boolean = currentRoundIndex < testData!.questions!.length - 1;
 
     if (isMoreQuestionsAvailable) {
       setCurrentRoundIndex(currentRoundIndex + 1);
+      resetCheckedAnswerId();
     } else {
       // eslint-disable-next-line no-console
       console.log("Конец вопросов");
@@ -71,11 +88,35 @@ export const TestScreen: React.FC = () => {
           </>
         ) : (
           <>
-            <div>
-              {`${testData!.questions![currentRoundIndex]!.id} ${testData!.questions![currentRoundIndex]!.question}`}
+            <div className={PROGRESS_STYLES}>
+              <span className={PROGRESS_PASSED_STYLES}>{testData!.questions![currentRoundIndex]!.id}</span>
+              {`/${testData!.questions!.length}`}
             </div>
-            <div>Кнопки</div>
-            <button type="submit" onClick={checkAnswer}>Далее</button>
+            <div className={QUESTION_STYLES}>
+              {`${testData!.questions![currentRoundIndex]!.id}. ${testData!.questions![currentRoundIndex]!.question}`}
+            </div>
+            <ul className={ANSWERS_STYLES}>
+              {testData &&
+          testData!.questions![currentRoundIndex]["variants"]["map"]((variant: any) => {
+            return (
+              <li key={variant.id} className={ANSWER_STYLES}>
+                <input
+                  id={variant.id} type="radio"
+                  name="answer"
+                  className={INPUT_STYLES}
+                  value={variant.answer}
+                  onChange={() => {
+                    return setCheckedAnswerId(variant.answer);
+                  }}
+                />
+                <label htmlFor={variant.id} className={LABEL_STYLES}>
+                  <span>{variant.answer}</span>
+                </label>
+              </li>
+            );
+          })}
+            </ul>
+            <Button text="Далее" onClick={checkAnswer} />
           </>
         )}
       </article>
