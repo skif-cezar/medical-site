@@ -13,7 +13,11 @@ export type TestData = {
  */
 export interface TestStoreInterface {
   data: TestData,
-  setData: Dispatch<SetStateAction<TestData>>
+  setData: Dispatch<SetStateAction<TestData>>,
+  currentRoundIndex: number,
+  setCurrentRoundIndex: Dispatch<SetStateAction<number>>,
+  checkedAnswerId: string | null,
+  setCheckedAnswerId: Dispatch<SetStateAction<string | null>>,
 }
 
 /**
@@ -21,8 +25,10 @@ export interface TestStoreInterface {
  */
 export const useTestStore = (): TestStoreInterface => {
   const [data, setData] = useState<TestData>(TestDTO);
+  const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
+  const [checkedAnswerId, setCheckedAnswerId] = useState<string | null>(null);
 
-  return {data, setData};
+  return {data, setData, currentRoundIndex, setCurrentRoundIndex, checkedAnswerId, setCheckedAnswerId};
 };
 
 /**
