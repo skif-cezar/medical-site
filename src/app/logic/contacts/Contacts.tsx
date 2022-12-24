@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "src/app/logic/contacts/Contacts.module.scss";
-import {Button} from "src/app/components/button/Button";
+import {Form} from "src/app/components/form/Form";
 
 /**
  * Contacts section
@@ -11,7 +11,6 @@ export const Contacts: React.FC = () => {
   const CONTENT_STYLES = clsx(styles.contacts__content);
   const CONTAINER_STYLES = clsx(styles.contacts__container);
   const CONTENT_TITLE_STYLES = clsx(styles.contacts__title);
-  const FORM_STYLES = clsx(styles.form);
   const CONTACTS_ADRESS_STYLES = clsx(styles.contacts__adress);
 
   return (
@@ -23,17 +22,7 @@ export const Contacts: React.FC = () => {
             Оставьте свои контакты. Менеджер перезвонит в&nbsp;удобное вам время и ответит на все
             вопросы.
           </p>
-          <form className={FORM_STYLES} action="#">
-            <input
-              type="text" name="name"
-              placeholder="Ваше имя" required
-            />
-            <input
-              type="tel" name="phone"
-              placeholder="Введите телефон" required
-            />
-            <Button text="Оставить заявку" />
-          </form>
+          <Form />
         </article>
         <div className={CONTACTS_ADRESS_STYLES}>
           <iframe
