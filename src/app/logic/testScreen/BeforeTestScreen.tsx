@@ -27,7 +27,7 @@ export const BeforeTestScreen: React.FC<BeforeTestScreenProps> = (props: BeforeT
       <img
         className={TEST_IMAGE_STYLES}
         src={CardSrc}
-        alt={props.data?.body}
+        alt={props.data?.title}
         width="160"
         height="160"
       />

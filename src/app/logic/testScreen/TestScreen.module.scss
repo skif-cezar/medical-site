@@ -39,6 +39,10 @@
   &__question {
     margin-top: 95px;
   }
+  &__question span,
+  &__label span {
+    font-size: 1.4rem;
+  }
   &__answers {
     max-width: 900px;
     list-style: none;
@@ -54,7 +58,7 @@
   }
   &__input[type="radio"]:checked ~ &__label::before {
     box-shadow: inset 0px 0px 0 5px #fff;
-    background: #A5808A;
+    background: #a5808a;
   }
   &__label {
     display: flex;
