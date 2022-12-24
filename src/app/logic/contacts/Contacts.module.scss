@@ -40,6 +40,11 @@
   justify-content: flex-start;
   align-items: flex-start;
   row-gap: 1.72rem;
+  &__errors {
+    margin-top: -30px;
+    font-size: 0.8rem;
+    color: #f37778;
+  }
 }
 
 .form input {
