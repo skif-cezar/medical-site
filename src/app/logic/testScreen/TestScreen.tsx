@@ -27,12 +27,15 @@ export const TestScreen: React.FC = () => {
 
   const [isStatus, setIsStatus] = useState<boolean>(true);
 
-  const resetCheckedAnswerId = (): void => {
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const resetCheckedAnswerId = () => {
     return setCheckedAnswerId(null);
   };
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleClick = () => {
+    setCurrentRoundIndex(0);
+    resetCheckedAnswerId();
     setIsStatus(false);
   };
 
@@ -40,10 +43,10 @@ export const TestScreen: React.FC = () => {
   const {id} = useParams();
   const index = Number(id) - 1;
   const testData = data[index];
-  // eslint-disable-next-line no-console
-  console.log(testData);
 
   const checkAnswer: () => void = () => {
+    // eslint-disable-next-line no-unreachable, no-console
+    console.log(checkedAnswerId);
     if (checkedAnswerId === null) {
       return;
     }
@@ -51,8 +54,8 @@ export const TestScreen: React.FC = () => {
     const isMoreQuestionsAvailable: boolean = currentRoundIndex < testData!.questions!.length - 1;
 
     if (isMoreQuestionsAvailable) {
-      setCurrentRoundIndex(currentRoundIndex + 1);
       resetCheckedAnswerId();
+      setCurrentRoundIndex(currentRoundIndex + 1);
     } else {
       // eslint-disable-next-line no-console
       console.log("Конец вопросов");

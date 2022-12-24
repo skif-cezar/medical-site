@@ -64,7 +64,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
                   className={INPUT_STYLES}
                   value={variant.answer}
                   onChange={() => {
-                    return setCheckedAnswerId(variant.answer);
+                    setCheckedAnswerId(variant.answer);
                   }}
                 />
                 <label htmlFor={variant.id} className={LABEL_STYLES}>

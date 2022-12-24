@@ -17,9 +17,6 @@ export const Tests: React.FC = () => {
   // Storage data
   const {data}: TestStoreInterface = useContext(TestContext);
 
-  // eslint-disable-next-line no-console
-  console.log(data);
-
   return (
     <section className={TESTS_STYLES} id="tests">
       <h2 className={TITLE_STYLES}>Тесты</h2>
