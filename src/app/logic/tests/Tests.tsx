@@ -14,16 +14,15 @@ export const Tests: React.FC = () => {
   const TITLE_STYLES = clsx(styles.tests__title);
   const CONTAINER_STYLES = clsx(styles.tests__container);
 
+  // Storage data
   const {data}: TestStoreInterface = useContext(TestContext);
-
-  // eslint-disable-next-line no-console
-  console.log(data);
 
   return (
     <section className={TESTS_STYLES} id="tests">
       <h2 className={TITLE_STYLES}>Тесты</h2>
       <div className={CONTAINER_STYLES}>
         {data &&
+          // render test cards
           data["map"]((test: TestData) => {
             return (
               <NavLink key={test["id"]} to={`${TEST_PAGE_PATH}/${test["id"]}`}>

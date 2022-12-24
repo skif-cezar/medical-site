@@ -23,17 +23,15 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
   const CARD_TEXT_STYLES = clsx(styles.card__text);
 
   return (
-    <div>
-      <a className={CARD_STYLES} href='/'>
-        <span className={CARD_CONTAINER_STYLES}>
-          <img
-            className={CARD_IMAGE_STYLES} src={CardSrc}
-            alt={props.text} width='76'
-            height='76'
-          />
-          <span className={CARD_TEXT_STYLES}>{props.text}</span>
-        </span>
-      </a>
+    <div className={CARD_STYLES}>
+      <span className={CARD_CONTAINER_STYLES}>
+        <img
+          className={CARD_IMAGE_STYLES} src={CardSrc}
+          alt={props.text} width="76"
+          height="76"
+        />
+        <span className={CARD_TEXT_STYLES}>{props.text}</span>
+      </span>
     </div>
   );
 };

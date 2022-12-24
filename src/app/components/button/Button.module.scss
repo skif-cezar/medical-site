@@ -1,16 +1,19 @@
 .button {
   display: inline-block;
-  width: 309px;
-  height: 74px;
   margin-top: 21px;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 74px;
-  text-align: center;
-  color: #533738;
-  background-color: #cc8b86;
-  transition: all 0.5s ease;
+
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  padding: 1em 2em;
+  color: #A5808A;
+  transition: 0.25s;
+  box-shadow: 0.3em 0.3em 0 0 #A5808A, inset 0.3em 0.3em 0 0 #A5808A;
 }
 .button:hover {
-  background-color: #a16965;
+  /*background-color: #a16965;*/
+  box-shadow: 0 0 0 0 #A5808A, inset 6em 3.5em 0 0 #A5808A;
+  border-color: #A5808A;
+  color: #fff;
 }
