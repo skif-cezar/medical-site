@@ -44,12 +44,14 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
         }
       </div>
       <div className={QUESTION_STYLES}>
-        {
-          // Question number and question
-          `${testData!.questions![currentRoundIndex]!.id}. ${
-            testData!.questions![currentRoundIndex]!.question
-          }`
-        }
+        <span>
+          {
+            // Question number and question
+            `${testData!.questions![currentRoundIndex]!.id}. ${
+              testData!.questions![currentRoundIndex]!.question
+            }`
+          }
+        </span>
       </div>
       <ul className={ANSWERS_STYLES}>
         {testData &&

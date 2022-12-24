@@ -11,7 +11,16 @@
   &__container {
     max-width: 1037px;
     width: 100%;
-    margin: 40px auto 0;
+    margin: 10px auto 0;
+  }
+  &__container img {
+    margin-left: -37px;
+    background: #A5808A;
+    border: 13px solid #A5808A;
+    border-radius: 13px;
+    transform: scale(.84)translateX(15%)rotateZ(calc(-1 * (11 * 0.5deg)));
+    transform-origin: 0 100%;
+    overflow: hidden;
   }
   &__content {
     display: flex;
