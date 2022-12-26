@@ -1,5 +1,6 @@
 import React from "react";
 import {Message, useForm} from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import clsx from "clsx";
 import styles from "src/app/components/form/Form.module.scss";
 import {Button} from "src/app/components/button/Button";
@@ -7,7 +8,7 @@ import {Button} from "src/app/components/button/Button";
 export type FieldsForm = {
   name?: string;
   message?: Message;
-  phone?: number;
+  tel?: number;
   comment?: string;
 };
 
@@ -17,12 +18,14 @@ export type FieldsForm = {
 export const Form: React.FC = () => {
   const FORM_STYLES = clsx(styles.form);
   const FORM_ERRORS_STYLES = clsx(styles.form__errors);
+  const SERVICE_ID = "service_1pf56ee";
+  const TEMPLATE_ID = "template_p7be108";
+  const PUBLIC_KEY = "4m1dXuenMOCYQ-Olg";
 
   // eslint-disable-next-line @typescript-eslint/typedef
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     // eslint-disable-next-line @typescript-eslint/typedef
     formState: {errors},
@@ -31,13 +34,22 @@ export const Form: React.FC = () => {
     // eslint-disable-next-line no-console
     console.log(data);
     reset();
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY)
+      // eslint-disable-next-line @typescript-eslint/typedef
+      .then((result) => {
+        // eslint-disable-next-line no-console
+        console.log(result.text);
+      // eslint-disable-next-line @typescript-eslint/typedef
+      }, (error) => {
+        // eslint-disable-next-line no-console
+        console.log(error.text);
+      });
   };
 
-  // eslint-disable-next-line no-console
-  console.log(watch("name"));
-
   return (
-    <form className={FORM_STYLES} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={FORM_STYLES} onSubmit={handleSubmit(onSubmit)}
+    >
       <input
         {...register("name", {
           minLength: {
@@ -52,11 +64,11 @@ export const Form: React.FC = () => {
       />
       {errors["name"] && <span className={FORM_ERRORS_STYLES}>{errors["name"].message}</span>}
       <input
-        {...register("phone", {
+        {...register("tel", {
           pattern: {
             value:
-              /^\+?([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/,
-            message: "Номер должен быть формата: \"+375-XX-XXX-XX-XX\"",
+              /^\+?([0-9]{12})$/,
+            message: "Номер должен быть из 12 цифр формата: \"+375XXXXXXXXX\"",
           },
           required: "Поле обязательно к заполнению",
         })}
@@ -64,7 +76,7 @@ export const Form: React.FC = () => {
         placeholder="Введите телефон"
         maxLength={40}
       />
-      {errors["phone"] && <span className={FORM_ERRORS_STYLES}>{errors["phone"].message}</span>}
+      {errors["tel"] && <span className={FORM_ERRORS_STYLES}>{errors["tel"].message}</span>}
       <input
         {...register("comment", {
           minLength: {
