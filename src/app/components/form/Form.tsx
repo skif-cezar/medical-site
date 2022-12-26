@@ -8,6 +8,7 @@ export type FieldsForm = {
   name?: string;
   message?: Message;
   phone?: number;
+  comment?: string;
 };
 
 /**
@@ -47,6 +48,7 @@ export const Form: React.FC = () => {
         })}
         type="text"
         placeholder="Ваше имя"
+        maxLength={40}
       />
       {errors["name"] && <span className={FORM_ERRORS_STYLES}>{errors["name"].message}</span>}
       <input
@@ -60,8 +62,21 @@ export const Form: React.FC = () => {
         })}
         type="tel"
         placeholder="Введите телефон"
+        maxLength={40}
       />
       {errors["phone"] && <span className={FORM_ERRORS_STYLES}>{errors["phone"].message}</span>}
+      <input
+        {...register("comment", {
+          minLength: {
+            value: 5,
+            message: "Минимум 5 символов",
+          },
+
+        })}
+        maxLength={40}
+        placeholder="Оставьте сообщение, например, удобное время для связи"
+      />
+      {errors["comment"] && <span className={FORM_ERRORS_STYLES}>{errors["comment"].message}</span>}
       <Button text="Оставить заявку" />
     </form>
   );
