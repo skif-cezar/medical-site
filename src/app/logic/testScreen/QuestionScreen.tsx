@@ -27,7 +27,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
   const LABEL_STYLES = clsx(styles.test__label);
 
   const testData = props.data;
-  const {currentRoundIndex, setCheckedAnswerId}: TestStoreInterface = useContext(TestContext);
+  const {currentRoundIndex, setCheckedAnswerValue}: TestStoreInterface = useContext(TestContext);
 
   return (
     <>
@@ -66,7 +66,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
                   className={INPUT_STYLES}
                   value={variant.answer}
                   onChange={() => {
-                    setCheckedAnswerId(variant.answer);
+                    setCheckedAnswerValue(variant.answer);
                   }}
                 />
                 <label htmlFor={variant.id} className={LABEL_STYLES}>

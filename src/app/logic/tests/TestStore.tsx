@@ -12,12 +12,48 @@ export type TestData = {
  * Test store interface
  */
 export interface TestStoreInterface {
-  data: TestData,
-  setData: Dispatch<SetStateAction<TestData>>,
-  currentRoundIndex: number,
-  setCurrentRoundIndex: Dispatch<SetStateAction<number>>,
-  checkedAnswerId: string | null,
-  setCheckedAnswerId: Dispatch<SetStateAction<string | null>>,
+  /**
+   * Data
+   */
+  data: TestData;
+
+  /**
+   * Set data
+   */
+  setData: Dispatch<SetStateAction<TestData>>;
+
+  /**
+   * Current round index
+   */
+  currentRoundIndex: number;
+
+  /**
+   * Set current round index
+   */
+  setCurrentRoundIndex: Dispatch<SetStateAction<number>>;
+
+  /**
+   * User answer
+   */
+  checkedAnswerValue: string | null;
+
+  /**
+   * Set user answer
+   */
+  setCheckedAnswerValue: Dispatch<SetStateAction<string | null>>;
+
+  score: number;
+  setScore: Dispatch<SetStateAction<number>>;
+
+  /**
+   * Final message on the test result
+   */
+  message: TestData;
+
+  /**
+   * Set final message on the test result
+   */
+  setMessage: Dispatch<SetStateAction<TestData>>;
 }
 
 /**
@@ -26,9 +62,22 @@ export interface TestStoreInterface {
 export const useTestStore = (): TestStoreInterface => {
   const [data, setData] = useState<TestData>(TestDTO);
   const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
-  const [checkedAnswerId, setCheckedAnswerId] = useState<string | null>(null);
+  const [score, setScore] = useState<number>(0);
+  const [checkedAnswerValue, setCheckedAnswerValue] = useState<string | null>(null);
+  const [message, setMessage] = useState<TestData>({});
 
-  return {data, setData, currentRoundIndex, setCurrentRoundIndex, checkedAnswerId, setCheckedAnswerId};
+  return {
+    data,
+    setData,
+    currentRoundIndex,
+    setCurrentRoundIndex,
+    checkedAnswerValue,
+    setCheckedAnswerValue,
+    score,
+    setScore,
+    message,
+    setMessage,
+  };
 };
 
 /**

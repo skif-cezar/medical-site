@@ -80,6 +80,17 @@
   }
 }
 
+.result {
+  &__title {
+    margin-top: 95px;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  &__text {
+    font-size: 1.4rem;
+  }
+}
+
 .close {
   display: block;
   height: 25px;
