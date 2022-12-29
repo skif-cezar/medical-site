@@ -15,10 +15,10 @@
   }
   &__container img {
     margin-left: -37px;
-    background: #A5808A;
-    border: 13px solid #A5808A;
+    background: #a5808a;
+    border: 13px solid #a5808a;
     border-radius: 13px;
-    transform: scale(.84)translateX(15%)rotateZ(calc(-1 * (11 * 0.5deg)));
+    transform: scale(0.84) translateX(15%) rotateZ(calc(-1 * (11 * 0.5deg)));
     transform-origin: 0 100%;
     overflow: hidden;
   }
@@ -33,5 +33,44 @@
   &__description {
     max-width: 320px;
     margin-top: 10px;
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 479.98px) {
+  .team {
+    &__content figure {
+      width: 100vw;
+    }
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575.98px) {
+  .team {
+    &__description {
+      max-width: 576px;
+      padding: 0px 20px;
+    }
+    &__content figcaption {
+      text-align: left;
+    }
+  }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media screen and (max-width: 767.98px) {
+  .team {
+    &__content {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &__description {
+      max-width: 458px;
+    }
+    &__content figure {
+      text-align: center;
+    }
   }
 }
