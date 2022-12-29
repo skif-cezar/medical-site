@@ -25,7 +25,7 @@
 }
 
 // `sm` applies to x-small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) {
   .about {
     &__content p {
       font-size: 1.4rem;
@@ -38,7 +38,7 @@
 }
 
 // `md` applies to small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
+@media screen and (max-width: 767.98px) {
   .about {
     &__title {
       margin-top: 35px;
@@ -58,7 +58,7 @@
 }
 
 // `lg` applies to medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
+@media screen and (max-width: 991.98px) {
   .about {
     &__content img {
       width: 325px;
@@ -68,7 +68,7 @@
 }
 
 // `xl` applies to large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
+@media screen and (max-width: 1199.98px) {
   .about {
     &__content {
       justify-content: flex-start;
