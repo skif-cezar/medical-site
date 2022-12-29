@@ -23,3 +23,54 @@
     gap: 3.55rem;
   }
 }
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575.98px) {
+  .about {
+    &__content img {
+      height: auto;
+      max-width: 320px;
+    }
+  }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media screen and (max-width: 767.98px) {
+  .about {
+    &__title {
+      margin-top: 35px;
+    }
+    &__container {
+      margin-top: 30px;
+    }
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    &__content p {
+      padding: 0px 35px;
+    }
+  }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media screen and (max-width: 991.98px) {
+  .about {
+    &__content img {
+      width: 325px;
+      height: auto;
+    }
+  }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media screen and (max-width: 1199.98px) {
+  .about {
+    &__content {
+      justify-content: flex-start;
+      gap: 2.5rem;
+      padding: 0px 15px 21px;
+    }
+  }
+}
