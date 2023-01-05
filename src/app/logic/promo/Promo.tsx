@@ -20,7 +20,7 @@ export const Promo: React.FC = () => {
       <h1 className={TITLE_HIDDEN_STYLES}>Медицинское учреждение</h1>
       <div className={CONTAINER_STYLES}>
         <h2 className={TITLE_STYLES}>
-          Пройдите тест и&nbsp;мы&nbsp;поможем подобрать план лечения
+          Помощь семье аутичного&nbsp;ребёнка
         </h2>
         <p className={DESCRIPTION_STYLES}>
           Медицинский центр общего профиля. Помогаем пациентам по всем направлениям. Наши

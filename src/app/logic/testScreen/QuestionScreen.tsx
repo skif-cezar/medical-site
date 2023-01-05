@@ -64,9 +64,9 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
                   type="radio"
                   name="answer"
                   className={INPUT_STYLES}
-                  value={variant.answer}
+                  value={variant.score}
                   onChange={() => {
-                    setCheckedAnswerValue(variant.answer);
+                    setCheckedAnswerValue(variant.score);
                   }}
                 />
                 <label htmlFor={variant.id} className={LABEL_STYLES}>

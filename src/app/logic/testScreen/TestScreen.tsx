@@ -61,18 +61,33 @@ export const TestScreen: React.FC = () => {
     }
 
     const isMoreQuestionsAvailable: boolean = currentRoundIndex < testData!.questions!.length - 1;
-    const isRightAnswer: boolean =
-      checkedAnswerValue === testData!.questions[currentRoundIndex].userAnswer;
 
-    if (isRightAnswer) {
-      setScore(score + 1);
+    if (index === 0) {
+      setScore(score + checkedAnswerValue);
+    } else if (index === 1) {
+      const isRightAnswer: boolean =
+        checkedAnswerValue === testData!.questions[currentRoundIndex].userAnswer;
+
+      if (isRightAnswer) {
+        setScore(score + 1);
+      }
     }
 
     if (isMoreQuestionsAvailable) {
       resetCheckedAnswerId();
       setCurrentRoundIndex(currentRoundIndex + 1);
     } else {
-      if (index === 0) {
+      if (index === 0) { // check test №1
+        // eslint-disable-next-line no-console
+        console.log(score);
+        if (score >= 0 && score <= 2) {
+          setMessage(testData!.messages[0]);
+        } else if (score >= 3 && score <= 7) {
+          setMessage(testData!.messages[1]);
+        } else if (score >= 8 && score <= 20) {
+          setMessage(testData!.messages[2]);
+        }
+      } else if (index === 1) { // check test №2
         if (score >= 0 && score <= 2) {
           setMessage(testData!.messages[0]);
         } else if (score >= 3 && score <= 7) {
