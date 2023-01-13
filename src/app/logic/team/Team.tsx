@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "src/app/logic/team/Team.module.scss";
 import employeeOneSrc from "src/resources/employee-1.jpg";
 import employeeTwoSrc from "src/resources/employee-2.jpg";
+import employeeThreeSrc from "src/resources/employee-3.jpg";
 
 /**
  * Team section
@@ -22,7 +23,7 @@ export const Team: React.FC = () => {
           <figure>
             <img
               src={employeeOneSrc}
-              alt="Сотрудник Татьяна Васильевна Докукина. Главный врач."
+              alt="Сотрудник Татьяна Васильевна Докукина. Доктор медицинских наук."
               width="320"
               height="253"
             />
@@ -36,7 +37,7 @@ export const Team: React.FC = () => {
           <figure>
             <img
               src={employeeTwoSrc}
-              alt="Сотрудник Ольга Михайловна Лапыш. Врач."
+              alt="Сотрудник Ольга Михайловна Лапыш. Врач психиатр-нарколог."
               width="320"
               height="253"
             />
@@ -53,6 +54,34 @@ export const Team: React.FC = () => {
                   расстройств вследствие эпилепсии&ldquo;
                 </em>
               </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src={employeeThreeSrc}
+              alt="Сотрудник Мария Николаевна Трущенко. Врач."
+              width="320"
+              height="253"
+            />
+            <figcaption className={DESCRIPTION_STYLES}>
+              <p>
+                <b>Трущенко Мария Николаевна</b>
+              </p>
+              <em>Медицинский психолог, нейропсихолог.</em>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src={employeeThreeSrc}
+              alt="Сотрудник Мария Николаевна Трущенко. Врач."
+              width="320"
+              height="253"
+            />
+            <figcaption className={DESCRIPTION_STYLES}>
+              <p>
+                <b>Трущенко Мария Николаевна</b>
+              </p>
+              <em>Медицинский психолог, нейропсихолог.</em>
             </figcaption>
           </figure>
         </div>
