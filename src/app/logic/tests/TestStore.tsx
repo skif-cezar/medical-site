@@ -35,12 +35,12 @@ export interface TestStoreInterface {
   /**
    * User answer
    */
-  checkedAnswerValue: string | null;
+  checkedAnswerValue: number | null;
 
   /**
    * Set user answer
    */
-  setCheckedAnswerValue: Dispatch<SetStateAction<string | null>>;
+  setCheckedAnswerValue: Dispatch<SetStateAction<number | null>>;
 
   score: number;
   setScore: Dispatch<SetStateAction<number>>;
@@ -63,7 +63,7 @@ export const useTestStore = (): TestStoreInterface => {
   const [data, setData] = useState<TestData>(TestDTO);
   const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
-  const [checkedAnswerValue, setCheckedAnswerValue] = useState<string | null>(null);
+  const [checkedAnswerValue, setCheckedAnswerValue] = useState<number | null>(null);
   const [message, setMessage] = useState<TestData>({});
 
   return {
