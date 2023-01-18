@@ -28,7 +28,7 @@ export const AfterTestScreen: React.FC = () => {
       <article className={TEST_CONTAINER_STYLES}>
         <div className={RESULT_TITLE_STYLES}>{message["message"].title}</div>
         <div className={RESULT_TEXT_STYLES}>{message["message"].body}</div>
-        <div className={RESULT_TEXT_STYLES}>{score}</div>
+        <div className={RESULT_TEXT_STYLES}>{`Количество набранных баллов: ${score}`}</div>
       </article>
     </section>
   );

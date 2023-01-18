@@ -14,12 +14,7 @@
     margin: 10px auto 0;
   }
   &__container img {
-    margin-left: -37px;
-    background: #a5808a;
-    border: 13px solid #a5808a;
-    border-radius: 13px;
-    transform: scale(0.84) translateX(15%) rotateZ(-3.5deg);
-    transform-origin: 0 100%;
+    border-radius: 50%;
     overflow: hidden;
   }
   &__content {
@@ -31,9 +26,17 @@
     align-content: center;
     justify-content: space-around;
   }
+  &__content figure {
+    margin-top: 25px;
+  }
   &__description {
     max-width: 320px;
     margin-top: 10px;
+    font-size: 0.77rem;
+    text-align: center;
+  }
+  &__full_name {
+    font-size: 0.88rem;
   }
 }
 
