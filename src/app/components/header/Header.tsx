@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
         </div>
         <Menu />
         <address className={HEADER_PHONE_STYLES}>
-          <a href="tel:+79818574624">+7 (981) 857-46-24</a>
+          <a href="tel:+375292884861">+375 (29) 288-48-61</a>
         </address>
       </div>
     </header>
