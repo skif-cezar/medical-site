@@ -8,6 +8,7 @@ import {Team} from "src/app/logic/team/Team";
 import {Footer} from "src/app/logic/footer/Footer";
 import {Tests} from "src/app/logic/tests/Tests";
 import {Contacts} from "src/app/logic/contacts/Contacts";
+import {Services} from "src/app/logic/services/Services";
 
 /**
  *  Path to main page
@@ -27,6 +28,7 @@ export const Layout: React.FC = () => {
       <main className={MAIN_STYLES}>
         <Promo />
         <About />
+        <Services />
         <Team />
         <Tests />
         <Contacts />
