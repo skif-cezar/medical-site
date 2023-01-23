@@ -26,8 +26,8 @@ export const Team: React.FC = () => {
             <img
               src={employeeOneSrc}
               alt="Сотрудник Татьяна Васильевна Докукина. Доктор медицинских наук."
-              width="260"
-              height="260"
+              width="200"
+              height="200"
             />
             <figcaption className={DESCRIPTION_STYLES}>
               <p className={FULL_NAME_STYLES}>
@@ -40,8 +40,8 @@ export const Team: React.FC = () => {
             <img
               src={employeeTwoSrc}
               alt="Сотрудник Ольга Михайловна Лапыш. Врач психиатр-нарколог."
-              width="260"
-              height="260"
+              width="200"
+              height="200"
             />
             <figcaption className={DESCRIPTION_STYLES}>
               <p className={FULL_NAME_STYLES}>
@@ -62,8 +62,8 @@ export const Team: React.FC = () => {
             <img
               src={employeeThreeSrc}
               alt="Сотрудник Мария Николаевна Трущенко. Врач."
-              width="260"
-              height="260"
+              width="200"
+              height="200"
             />
             <figcaption className={DESCRIPTION_STYLES}>
               <p className={FULL_NAME_STYLES}>
@@ -76,8 +76,8 @@ export const Team: React.FC = () => {
             <img
               src={employeeFourSrc}
               alt="Сотрудник Наталия Владимировна Громова. Медицинский (клинический) психолог."
-              width="260"
-              height="260"
+              width="200"
+              height="200"
             />
             <figcaption className={DESCRIPTION_STYLES}>
               <p className={FULL_NAME_STYLES}>
