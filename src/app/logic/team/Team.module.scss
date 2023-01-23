@@ -27,6 +27,10 @@
     justify-content: space-around;
   }
   &__content figure {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     margin-top: 25px;
   }
   &__description {
