@@ -38,50 +38,13 @@
   &__question {
     margin-top: 95px;
   }
-  &__question span,
-  &__label span {
+  &__question span {
     font-size: 1.4rem;
+    font-weight: 600;
   }
   &__answers {
     max-width: 900px;
     list-style: none;
-  }
-  &__answer {
-    margin: 0 auto;
-    padding: 2rem 0;
-    position: relative;
-  }
-  &__input[type="radio"] {
-    opacity: 0;
-    display: none;
-  }
-  &__input[type="radio"]:checked ~ &__label::before {
-    box-shadow: inset 0px 0px 0 5px #fff;
-    background: #a5808a;
-  }
-  &__label {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-start;
-    column-gap: 15px;
-    cursor: pointer;
-  }
-  &__label span {
-    padding-left: 45px;
-  }
-  &__label::before {
-    position: absolute;
-    content: "";
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 2;
-    transition: box-shadow 0.4s ease, background 0.3s ease;
   }
 }
 

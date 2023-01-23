@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "src/app/logic/testScreen/TestScreen.module.scss";
 import {Button} from "src/app/components/button/Button";
 import {TestContext, TestStoreInterface} from "src/app/logic/tests/TestStore";
+import {Radio} from "src/app/components/radio/Radio";
 
 /**
  * QuestionScreen props
@@ -22,9 +23,6 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
   const PROGRESS_PASSED_STYLES = clsx(styles.test__passed);
   const QUESTION_STYLES = clsx(styles.test__question);
   const ANSWERS_STYLES = clsx(styles.test__answers);
-  const ANSWER_STYLES = clsx(styles.test__answer);
-  const INPUT_STYLES = clsx(styles.test__input);
-  const LABEL_STYLES = clsx(styles.test__label);
 
   const testData = props.data;
   const {currentRoundIndex, setCheckedAnswerValue}: TestStoreInterface = useContext(TestContext);
@@ -54,27 +52,23 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
         </span>
       </div>
       <ul className={ANSWERS_STYLES}>
-        {testData &&
-          // Render question with answers input
+        {testData.id === 3 ? (
+          <div>Test 3</div>
+        ) : (
+          // Render question with answers radio-input
           testData!.questions![currentRoundIndex]["variants"]["map"]((variant: any) => {
             return (
-              <li key={variant.id} className={ANSWER_STYLES}>
-                <input
-                  id={variant.id}
-                  type="radio"
-                  name="answer"
-                  className={INPUT_STYLES}
-                  value={variant.score}
-                  onChange={() => {
-                    setCheckedAnswerValue(variant.score);
-                  }}
-                />
-                <label htmlFor={variant.id} className={LABEL_STYLES}>
-                  <span>{variant.answer}</span>
-                </label>
-              </li>
+              <Radio
+                id={variant.id}
+                value={variant.score}
+                answer={variant.answer}
+                onChange={() => {
+                  setCheckedAnswerValue(variant.score);
+                }}
+              />
             );
-          })}
+          })
+        )}
       </ul>
       <Button text="Далее" onClick={props.onClick} />
     </>
