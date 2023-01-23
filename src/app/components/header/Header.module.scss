@@ -21,6 +21,8 @@
     padding: 0px 20px;
   }
   &__logo {
+    display: flex;
+    align-items: center;
     height: 66px;
     line-height: 66px;
     transition: all 0.3s;
@@ -28,6 +30,9 @@
   }
   &__logo:hover {
     transform: translate(0, -5px);
+  }
+  &__logo img {
+    height: 50px;
   }
   &__phone {
     position: relative;

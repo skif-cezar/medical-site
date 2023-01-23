@@ -86,7 +86,7 @@ export const Form: React.FC = () => {
 
         })}
         maxLength={40}
-        placeholder="Оставьте сообщение, например, удобное время для связи"
+        placeholder="Оставьте сообщение"
       />
       {errors["comment"] && <span className={FORM_ERRORS_STYLES}>{errors["comment"].message}</span>}
       <Button text="Оставить заявку" />

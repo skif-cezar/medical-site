@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import styles from "src/app/components/header/Header.module.scss";
 import {Menu} from "src/app/components/menu/Menu";
+import LogoSrc from "src/resources/logo.png";
 import {animateScroll as scroll} from "react-scroll";
 
 /**
@@ -31,11 +32,11 @@ export const Header: React.FC = () => {
           onKeyDown={handleKeyDown}
           role="button"
         >
-          LOGO
+          <img src={LogoSrc} alt="Логотип сайта." />
         </div>
         <Menu />
         <address className={HEADER_PHONE_STYLES}>
-          <a href="tel:+79818574624">+7 (981) 857-46-24</a>
+          <a href="tel:+375292884861">+375 (29) 288-48-61</a>
         </address>
       </div>
     </header>

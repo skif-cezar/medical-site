@@ -17,7 +17,7 @@ export const Promo: React.FC = () => {
 
   return (
     <section className={PROMO_STYLES}>
-      <h1 className={TITLE_HIDDEN_STYLES}>Медицинское учреждение</h1>
+      <h1 className={TITLE_HIDDEN_STYLES}>Помощь семье аутичного ребёнка</h1>
       <div className={CONTAINER_STYLES}>
         <h2 className={TITLE_STYLES}>
           Помощь семье аутичного&nbsp;ребёнка

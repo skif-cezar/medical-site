@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
     <footer className={FOOTER_STYLES}>
       <div className={CONTAINER_STYLES}>
         <address className={PHONE_STYLES}>
-          <a href="tel:+79818574624">+7 (981) 857-46-24</a>
+          <a href="tel:+375292884861">+375 (29) 288-48-61</a>
         </address>
         <address className={ADRESS_STYLES}>г. Минск, Долгиновский тракт, 152</address>
         <div className={COMPANY_STYLES}>ИП Лапыш О.М., УНП 591909696</div>

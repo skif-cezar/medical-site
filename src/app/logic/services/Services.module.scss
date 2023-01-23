@@ -1,0 +1,89 @@
+.hidden {
+  opacity: 0;
+}
+
+.services {
+  width: 100%;
+  background-color: #efe6e4;
+  padding-bottom: 30px;
+  &__title {
+    margin-top: 65px;
+    font-size: 2.22rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+  &__container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 65px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.66rem;
+    column-gap: 1.11rem;
+  }
+  &__imgs {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  &__imgs img {
+    max-width: 100%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz--transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  &__imgs:hover img,
+  &__imgs:focus img {
+    transform: scale(1.1);
+  }
+  &__imgs:hover .hidden,
+  &__imgs:focus .hidden {
+    opacity: 1;
+  }
+}
+
+.container {
+  &__description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.22rem;
+    padding: 0 35px;
+    color: #ffffff;
+    background: rgba(100, 72, 69, 0.8);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz--transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  &__title {
+    max-width: 270px;
+    font-weight: 500;
+    font-size: 1.66rem;
+    line-height: 1.23;
+    text-align: center;
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 479.98px) {
+  .container {
+    &__title {
+      font-size: 0.95rem;
+    }
+    &__paragraph {
+      font-size: 0.7rem;
+    }
+  }
+}

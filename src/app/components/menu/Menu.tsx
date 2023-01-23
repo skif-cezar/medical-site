@@ -21,7 +21,8 @@ export const Menu: React.FC = () => {
   return (
     <nav className={MENU_STYLES}>
       <ul
-        className={nav ? ACTIVE_MENU_STYLES : MENU_LIST_STYLES}>
+        className={nav ? ACTIVE_MENU_STYLES : MENU_LIST_STYLES}
+      >
         <li className={MENU_ITEM_STYLES}>
           <Link
             className={MENU_LINK_STYLES}
@@ -33,6 +34,19 @@ export const Menu: React.FC = () => {
             spy
           >
             О Центре
+          </Link>
+        </li>
+        <li className={MENU_ITEM_STYLES}>
+          <Link
+            className={MENU_LINK_STYLES}
+            to="services"
+            activeClass={ACTIVE_LINK_STYLES}
+            smooth
+            duration={500}
+            offset={-66}
+            spy
+          >
+            Наши услуги
           </Link>
         </li>
         <li className={MENU_ITEM_STYLES}>
