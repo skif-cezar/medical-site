@@ -71,6 +71,8 @@ export const TestScreen: React.FC = () => {
       if (isRightAnswer) {
         setScore(score + 1);
       }
+    } else if (index === 2) {
+      setScore(score + checkedAnswerValue);
     }
 
     if (isMoreQuestionsAvailable) {
@@ -78,8 +80,6 @@ export const TestScreen: React.FC = () => {
       setCurrentRoundIndex(currentRoundIndex + 1);
     } else {
       if (index === 0) { // check test №1
-        // eslint-disable-next-line no-console
-        console.log(score);
         if (score >= 0 && score <= 29) {
           setMessage(testData!.messages[0]);
         } else if (score >= 30 && score <= 36) {
@@ -95,6 +95,8 @@ export const TestScreen: React.FC = () => {
         } else if (score >= 8 && score <= 20) {
           setMessage(testData!.messages[2]);
         }
+      } else if (index === 2) {
+        setMessage(testData!.messages[0]);
       }
       navigation(AFTER_TEST_PAGE_PATH);
     }

@@ -23,9 +23,18 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
   const PROGRESS_PASSED_STYLES = clsx(styles.test__passed);
   const QUESTION_STYLES = clsx(styles.test__question);
   const ANSWERS_STYLES = clsx(styles.test__answers);
+  const GROUP_STYLES = clsx(styles.group);
+  const INPUT_STYLES = clsx(styles.input);
+  const LABEL_STYLES = clsx(styles.label);
 
   const testData = props.data;
-  const {currentRoundIndex, setCheckedAnswerValue}: TestStoreInterface = useContext(TestContext);
+  const {currentRoundIndex, setCheckedAnswerValue, checkedAnswerValue}: TestStoreInterface =
+    useContext(TestContext);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const userValue = parseInt(e.currentTarget.value, 10);
+    setCheckedAnswerValue(userValue);
+  };
 
   return (
     <>
@@ -53,7 +62,20 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
       </div>
       <ul className={ANSWERS_STYLES}>
         {testData.id === 3 ? (
-          <div>Test 3</div>
+          // Render question with answers input
+          <li className={GROUP_STYLES}>
+            <input
+              className={INPUT_STYLES}
+              type="number"
+              name="answer"
+              onChange={handleChange}
+              placeholder="answer"
+              value={checkedAnswerValue?.toString()}
+            />
+            <label htmlFor="answer" className={LABEL_STYLES}>
+              Answer
+            </label>
+          </li>
         ) : (
           // Render question with answers radio-input
           testData!.questions![currentRoundIndex]["variants"]["map"]((variant: any) => {

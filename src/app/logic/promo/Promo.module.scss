@@ -38,28 +38,31 @@
   overflow: hidden;
 }
 
-// `sm` applies to x-small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
-  .promo {
-    &__container {
-      text-align: center;
-      padding: 0 15px;
-    }
-    &__title {
-      font-size: 2.4rem;
-    }
-    &__description {
-      max-width: 100%;
-      margin-bottom: 24px;
-    }
-  }
-}
-
 // `md` applies to small devices (landscape phones, less than 768px)
 @media screen and (max-width: 767.98px) {
   .promo {
     &__container {
       margin: 152px auto 0px;
+    }
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .promo {
+    height: 440px;
+
+    &__container {
+      margin: 114px auto 0px;
+      text-align: center;
+      padding: 0 15px;
+    }
+    &__title {
+      font-size: 1.55rem;
+    }
+    &__description {
+      max-width: 100%;
+      margin-bottom: 24px;
     }
   }
 }
