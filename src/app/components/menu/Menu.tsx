@@ -3,6 +3,8 @@ import {Link} from "react-scroll";
 import clsx from "clsx";
 import styles from "src/app/components/menu/Menu.module.scss";
 import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
+import {NavLink} from "react-router-dom";
+import {PUBLICATIONS_PAGE_PATH} from "src/app/logic/publication/PublicationPage";
 
 /**
  * Menu component
@@ -93,6 +95,17 @@ export const Menu: React.FC = () => {
           >
             Тесты
           </Link>
+        </li>
+        <li className={MENU_ITEM_STYLES}>
+          <NavLink
+            to={PUBLICATIONS_PAGE_PATH}
+            className={({isActive}: {isActive: boolean}) => {return isActive ? ACTIVE_LINK_STYLES : MENU_LINK_STYLES;}}
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
+          >
+            Публикации
+          </NavLink>
         </li>
       </ul>
       <button
