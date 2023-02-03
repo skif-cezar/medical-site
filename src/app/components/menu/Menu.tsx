@@ -18,10 +18,17 @@ export const Menu: React.FC = () => {
 
   const [nav, setNav] = useState(false);
 
+  const closeMenu = (): void => {
+    setNav(!nav);
+  };
+
   return (
     <nav className={MENU_STYLES}>
       <ul
         className={nav ? ACTIVE_MENU_STYLES : MENU_LIST_STYLES}
+        onClick={closeMenu}
+        role="menu"
+        aria-hidden="true"
       >
         <li className={MENU_ITEM_STYLES}>
           <Link
@@ -32,6 +39,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             О Центре
           </Link>
@@ -45,6 +55,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Наши услуги
           </Link>
@@ -58,6 +71,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Сотрудники
           </Link>
@@ -71,16 +87,16 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Тесты
           </Link>
         </li>
       </ul>
       <button
-        onClick={() => {
-          return setNav(!nav);
-        }}
-        className={MOBILE_BUTTON_STYLES}
+        onClick={closeMenu} className={MOBILE_BUTTON_STYLES}
         type="button"
       >
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}

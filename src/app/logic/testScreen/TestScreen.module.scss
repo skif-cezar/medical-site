@@ -36,10 +36,10 @@
     font-weight: 500;
   }
   &__question {
-    margin-top: 95px;
+    margin-top: 80px;
   }
   &__question span {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
     font-weight: 600;
   }
   &__answers {
@@ -55,6 +55,7 @@
     font-weight: 700;
   }
   &__text {
+    margin-top: 20px;
     font-size: 1.4rem;
   }
 }
@@ -154,6 +155,23 @@ input[type="number"] {
 }
 
 /* reset input */
-.input:required, .input:invalid {
+.input:required,
+.input:invalid {
   box-shadow: none;
+}
+
+@media screen and (max-width: 768.02px) {
+  .test {
+    &__progress {
+      font-size: 1.55rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576.02px) {
+  .test {
+    &__title {
+      font-size: 1.55rem;
+    }
+  }
 }
