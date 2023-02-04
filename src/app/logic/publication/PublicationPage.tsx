@@ -3,6 +3,8 @@ import rehabСenterPdfUrl from "src/resources/publications/monografiya_reatsentr
 import ImgOneSrc from "src/resources/publications/publication-1.jpg";
 import clsx from "clsx";
 import styles from "src/app/logic/publication/PublicationPage.module.scss";
+import {Button} from "src/app/components/button/Button";
+import {NavLink} from "react-router-dom";
 
 /**
  *  Path to publications page
@@ -36,7 +38,8 @@ export const PublicationPage: React.FC = () => {
           </h3>
           <p className={TEXT_STYLES}>
             Докукина Т.В., Гаврилова Т.А., Голубева Т.С., Гребень С.А., Григорьева И.В., Захаревич
-            О.Ю., Мартыненко А.И., Марчук С.А., Мисюк Н.Н., Трущенко М.Н., Тукало М.И., Болгарина Л.Е.
+            О.Ю., Мартыненко А.И., Марчук С.А., Мисюк Н.Н., Трущенко М.Н., Тукало М.И., Болгарина
+            Л.Е.
           </p>
           <a
             className={LINK_STYLES} href={rehabСenterPdfUrl}
@@ -46,6 +49,9 @@ export const PublicationPage: React.FC = () => {
           </a>
         </div>
       </article>
+      <NavLink to='/'>
+        <Button text="Вернуться на главную" />
+      </NavLink>
     </section>
   );
 };

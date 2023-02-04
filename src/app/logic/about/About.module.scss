@@ -60,7 +60,7 @@
       gap: 1rem;
     }
     &__content p {
-      padding: 0px 35px;
+      padding: 0px 30px;
     }
   }
 }
@@ -80,6 +80,17 @@
     }
     &__content {
       gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 410.02px) {
+  .about {
+    &__content p {
+      padding: 0px;
+    }
+    &__content img {
+      width: 100%;
     }
   }
 }
