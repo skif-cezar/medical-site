@@ -28,12 +28,21 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
   const LABEL_STYLES = clsx(styles.label);
 
   const testData = props.data;
-  const {currentRoundIndex, setCheckedAnswerValue, checkedAnswerValue}: TestStoreInterface =
-    useContext(TestContext);
+  const {
+    currentRoundIndex,
+    setCheckedAnswerValue,
+    age,
+    setAge,
+    setChekedAnswerCheckBox,
+  }: TestStoreInterface = useContext(TestContext);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const userValue = parseInt(e.currentTarget.value, 10);
-    setCheckedAnswerValue(userValue);
+  const handleChangeAge = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setAge(parseFloat(e.currentTarget.value));
+    setCheckedAnswerValue(0);
+  };
+
+  const handleChangeAnswer = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setChekedAnswerCheckBox(e.currentTarget.value);
   };
 
   return (
@@ -61,30 +70,35 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
         </span>
       </div>
       <ul className={ANSWERS_STYLES}>
-        {testData.id === 3 ? (
+        {testData.id === 3 && currentRoundIndex === 0 ? (
           // Render question with answers input
-          <li className={GROUP_STYLES}>
-            <input
-              className={INPUT_STYLES}
-              type="number"
-              name="answer"
-              onChange={handleChange}
-              placeholder="answer"
-              value={checkedAnswerValue?.toString()}
-            />
-            <label htmlFor="answer" className={LABEL_STYLES}>
-              Answer
-            </label>
-          </li>
+          <>
+            <li className={GROUP_STYLES}>
+              <input
+                className={INPUT_STYLES}
+                type="number"
+                step="0.5"
+                name="answer"
+                onChange={handleChangeAge}
+                placeholder="answer"
+                value={age}
+              />
+              <label htmlFor="answer" className={LABEL_STYLES}>
+                Возраст
+              </label>
+            </li>
+            <Button text="Ответить" onClick={props.onClick} />
+          </>
         ) : (
           // Render question with answers radio-input
           testData!.questions![currentRoundIndex]["variants"]["map"]((variant: any) => {
             return (
               <Radio
+                key={variant.id}
                 id={variant.id}
-                value={variant.score}
+                value={testData.id === 3 ? `${variant.min}, ${variant.max}` : variant.score}
                 answer={variant.answer}
-                onChange={() => {
+                onChange={testData.id === 3 ? handleChangeAnswer : () => {
                   setCheckedAnswerValue(variant.score);
                 }}
               />
@@ -92,7 +106,9 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
           })
         )}
       </ul>
-      <Button text="Далее" onClick={props.onClick} />
+      {testData.id === 3 && currentRoundIndex === 0 ? undefined : (
+        <Button text="Далее" onClick={props.onClick} />
+      )}
     </>
   );
 };

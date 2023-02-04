@@ -25,7 +25,7 @@ export interface RadioProps {
    * Callback triggered on change
    */
   // eslint-disable-next-line react/require-default-props
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**

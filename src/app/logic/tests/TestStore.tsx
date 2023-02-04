@@ -33,6 +33,16 @@ export interface TestStoreInterface {
   setCurrentRoundIndex: Dispatch<SetStateAction<number>>;
 
   /**
+   * Age
+   */
+  age: number;
+
+  /**
+     * Set age
+     */
+  setAge: Dispatch<SetStateAction<number>>;
+
+  /**
    * User answer
    */
   checkedAnswerValue: number | null;
@@ -44,6 +54,16 @@ export interface TestStoreInterface {
 
   score: number;
   setScore: Dispatch<SetStateAction<number>>;
+
+  /**
+   * User answer in checkbox
+   */
+  chekedAnswerCheckBox: string;
+
+  /**
+    * Set user answer in checkbox
+    */
+  setChekedAnswerCheckBox: Dispatch<SetStateAction<string>>;
 
   /**
    * Final message on the test result
@@ -64,6 +84,8 @@ export const useTestStore = (): TestStoreInterface => {
   const [currentRoundIndex, setCurrentRoundIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [checkedAnswerValue, setCheckedAnswerValue] = useState<number | null>(null);
+  const [chekedAnswerCheckBox, setChekedAnswerCheckBox] = useState<string>("");
+  const [age, setAge] = useState<number>(0);
   const [message, setMessage] = useState<TestData>({});
 
   return {
@@ -77,6 +99,10 @@ export const useTestStore = (): TestStoreInterface => {
     setScore,
     message,
     setMessage,
+    age,
+    setAge,
+    chekedAnswerCheckBox,
+    setChekedAnswerCheckBox,
   };
 };
 
