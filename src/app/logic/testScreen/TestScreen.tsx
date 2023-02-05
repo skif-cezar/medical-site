@@ -33,8 +33,6 @@ export const TestScreen: React.FC = () => {
     setScore,
     setMessage,
     chekedAnswerCheckBox,
-    setChekedAnswerCheckBox,
-    setAge,
     age,
   }: TestStoreInterface = useContext(TestContext);
 
@@ -42,9 +40,6 @@ export const TestScreen: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const resetCheckedAnswerId = () => {
-    setChekedAnswerCheckBox("");
-    setAge(0);
-    setScore(0);
     return setCheckedAnswerValue(null);
   };
 
@@ -63,14 +58,18 @@ export const TestScreen: React.FC = () => {
   const testData = data[index];
 
   const checkAnswer: () => void = () => {
-    if (checkedAnswerValue === null) {
+    if (checkedAnswerValue === null && index !== 2) {
+      return;
+    }
+
+    if(index === 2 && chekedAnswerCheckBox === null) {
       return;
     }
 
     const isMoreQuestionsAvailable: boolean = currentRoundIndex < testData!.questions!.length - 1;
 
     if (index === 0) {
-      setScore(score + checkedAnswerValue);
+      setScore(score + checkedAnswerValue!);
     } else if (index === 1) {
       const isRightAnswer: boolean =
         checkedAnswerValue === testData!.questions[currentRoundIndex].userAnswer;
@@ -79,30 +78,24 @@ export const TestScreen: React.FC = () => {
         setScore(score + 1);
       }
     } else if (index === 2) {
-      if(chekedAnswerCheckBox !== undefined) {
-        const min = (chekedAnswerCheckBox[0]);
-        const max = (chekedAnswerCheckBox[1]);
-        // eslint-disable-next-line no-console
-        console.log(age);
+      const maxAge = parseFloat(testData!.questions[currentRoundIndex].max);
+      // eslint-disable-next-line no-console
+      console.log("Max:", maxAge);
+      // eslint-disable-next-line no-console
+      console.log("AgeUser:", age);
 
-        if (
-          age >= parseFloat(min!) &&
-          age <= parseFloat(max!)
-        ) {
-          // eslint-disable-next-line no-console
-          console.log("Нет ошибки");
-        }
-        setScore(score + 1);
+      if(chekedAnswerCheckBox === "Нет" && age > maxAge) {
         // eslint-disable-next-line no-console
         console.log("Ошибка");
-
+        setScore(score + 1);
       }
-      setScore(checkedAnswerValue);
     }
 
     if (isMoreQuestionsAvailable) {
       resetCheckedAnswerId();
       setCurrentRoundIndex(currentRoundIndex + 1);
+      // eslint-disable-next-line no-console
+      console.log(score);
     } else {
       if (index === 0) {
         // check test №1

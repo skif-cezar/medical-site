@@ -96,7 +96,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
               <Radio
                 key={variant.id}
                 id={variant.id}
-                value={testData.id === 3 ? `${variant.min}, ${variant.max}` : variant.score}
+                value={testData.id === 3 ? variant.answer : variant.score}
                 answer={variant.answer}
                 onChange={testData.id === 3 ? handleChangeAnswer : () => {
                   setCheckedAnswerValue(variant.score);
