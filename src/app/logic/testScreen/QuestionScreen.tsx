@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "src/app/logic/testScreen/TestScreen.module.scss";
 import {Button} from "src/app/components/button/Button";
 import {TestContext, TestStoreInterface} from "src/app/logic/tests/TestStore";
+import {Radio} from "src/app/components/radio/Radio";
 
 /**
  * QuestionScreen props
@@ -22,12 +23,27 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
   const PROGRESS_PASSED_STYLES = clsx(styles.test__passed);
   const QUESTION_STYLES = clsx(styles.test__question);
   const ANSWERS_STYLES = clsx(styles.test__answers);
-  const ANSWER_STYLES = clsx(styles.test__answer);
-  const INPUT_STYLES = clsx(styles.test__input);
-  const LABEL_STYLES = clsx(styles.test__label);
+  const GROUP_STYLES = clsx(styles.group);
+  const INPUT_STYLES = clsx(styles.input);
+  const LABEL_STYLES = clsx(styles.label);
 
   const testData = props.data;
-  const {currentRoundIndex, setCheckedAnswerValue}: TestStoreInterface = useContext(TestContext);
+  const {
+    currentRoundIndex,
+    setCheckedAnswerValue,
+    age,
+    setAge,
+    setChekedAnswerCheckBox,
+  }: TestStoreInterface = useContext(TestContext);
+
+  const handleChangeAge = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setAge(parseFloat(e.currentTarget.value));
+    setCheckedAnswerValue(0);
+  };
+
+  const handleChangeAnswer = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setChekedAnswerCheckBox(e.currentTarget.value);
+  };
 
   return (
     <>
@@ -54,29 +70,45 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = (props: QuestionScr
         </span>
       </div>
       <ul className={ANSWERS_STYLES}>
-        {testData &&
+        {testData.id === 3 && currentRoundIndex === 0 ? (
           // Render question with answers input
+          <>
+            <li className={GROUP_STYLES}>
+              <input
+                className={INPUT_STYLES}
+                type="number"
+                step="0.5"
+                name="answer"
+                onChange={handleChangeAge}
+                placeholder="answer"
+                value={age}
+              />
+              <label htmlFor="answer" className={LABEL_STYLES}>
+                Возраст
+              </label>
+            </li>
+            <Button text="Ответить" onClick={props.onClick} />
+          </>
+        ) : (
+          // Render question with answers radio-input
           testData!.questions![currentRoundIndex]["variants"]["map"]((variant: any) => {
             return (
-              <li key={variant.id} className={ANSWER_STYLES}>
-                <input
-                  id={variant.id}
-                  type="radio"
-                  name="answer"
-                  className={INPUT_STYLES}
-                  value={variant.score}
-                  onChange={() => {
-                    setCheckedAnswerValue(variant.score);
-                  }}
-                />
-                <label htmlFor={variant.id} className={LABEL_STYLES}>
-                  <span>{variant.answer}</span>
-                </label>
-              </li>
+              <Radio
+                key={variant.id}
+                id={variant.id}
+                value={testData.id === 3 ? variant.answer : variant.score}
+                answer={variant.answer}
+                onChange={testData.id === 3 ? handleChangeAnswer : () => {
+                  setCheckedAnswerValue(variant.score);
+                }}
+              />
             );
-          })}
+          })
+        )}
       </ul>
-      <Button text="Далее" onClick={props.onClick} />
+      {testData.id === 3 && currentRoundIndex === 0 ? undefined : (
+        <Button text="Далее" onClick={props.onClick} />
+      )}
     </>
   );
 };

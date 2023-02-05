@@ -62,8 +62,9 @@
     z-index: 10;
   }
   .menu__list {
+    padding-top: 35px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: fixed;
     left: -100%;
     right: 0;

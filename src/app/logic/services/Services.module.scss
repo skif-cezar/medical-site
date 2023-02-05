@@ -76,14 +76,53 @@
   }
 }
 
+@media screen and (max-width: 768.02px) {
+  .services {
+    &__title {
+      margin-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 586.02px) {
+  .services {
+    &__container {
+      width: 100vw;
+      padding: 0px 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .services {
+    &__title {
+      font-size: 1.55rem;
+    }
+    &__container {
+      margin-top: 20px;
+    }
+    &__content {
+      row-gap: 20px;
+    }
+  }
+  .container {
+    &__description {
+      row-gap: 20px;
+    }
+  }
+}
+
 // `sm` applies to x-small devices (portrait phones, less than 576px)
-@media screen and (max-width: 479.98px) {
+@media screen and (max-width: 482.02px) {
   .container {
     &__title {
       font-size: 0.95rem;
     }
     &__paragraph {
       font-size: 0.7rem;
+    }
+    &__description {
+      padding: 0 10px;
     }
   }
 }

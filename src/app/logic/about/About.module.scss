@@ -24,12 +24,23 @@
   }
 }
 
-// `sm` applies to x-small devices (portrait phones, less than 576px)
-@media screen and (max-width: 575.98px) {
+// `xl` applies to large devices (desktops, less than 1200px)
+@media screen and (max-width: 1199.98px) {
+  .about {
+    &__content {
+      justify-content: flex-start;
+      gap: 2.5rem;
+      padding: 0px 15px 21px;
+    }
+  }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media screen and (max-width: 991.98px) {
   .about {
     &__content img {
+      width: 325px;
       height: auto;
-      max-width: 320px;
     }
   }
 }
@@ -49,28 +60,37 @@
       gap: 1rem;
     }
     &__content p {
-      padding: 0px 35px;
+      padding: 0px 30px;
     }
   }
 }
 
-// `lg` applies to medium devices (tablets, less than 992px)
-@media screen and (max-width: 991.98px) {
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575.98px) {
   .about {
     &__content img {
-      width: 325px;
       height: auto;
+      max-width: 320px;
+    }
+    &__title {
+      font-size: 1.55rem;
+    }
+    &__container {
+      margin-top: 20px;
+    }
+    &__content {
+      gap: 20px;
     }
   }
 }
 
-// `xl` applies to large devices (desktops, less than 1200px)
-@media screen and (max-width: 1199.98px) {
+@media screen and (max-width: 410.02px) {
   .about {
-    &__content {
-      justify-content: flex-start;
-      gap: 2.5rem;
-      padding: 0px 15px 21px;
+    &__content p {
+      padding: 0px;
+    }
+    &__content img {
+      width: 100%;
     }
   }
 }

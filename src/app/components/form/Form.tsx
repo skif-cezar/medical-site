@@ -18,9 +18,9 @@ export type FieldsForm = {
 export const Form: React.FC = () => {
   const FORM_STYLES = clsx(styles.form);
   const FORM_ERRORS_STYLES = clsx(styles.form__errors);
-  const SERVICE_ID = "service_1pf56ee";
-  const TEMPLATE_ID = "template_p7be108";
-  const PUBLIC_KEY = "4m1dXuenMOCYQ-Olg";
+  const SERVICE_ID = "service_ocx48um";
+  const TEMPLATE_ID = "template_5u85bnr";
+  const PUBLIC_KEY = "knM04FfZqcBn3XNcb";
 
   // eslint-disable-next-line @typescript-eslint/typedef
   const {

@@ -1,0 +1,141 @@
+.publications {
+  margin-top: 35px;
+  padding: 0px 15px 35px 15px;
+}
+
+.publications button {
+  margin: 35px auto;
+  display: block;
+}
+
+.publications h2 {
+  font-size: 2.22rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  margin: 35px auto 0px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 576px;
+  height: 258px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.image {
+  height: 256px;
+}
+
+.image img {
+  height: 100%;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.33rem;
+  line-height: 1.55rem;
+  font-weight: 600;
+}
+.text {
+  font-weight: 400;
+  color: #5e5d73;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  margin-top: 10px;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.link {
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(26 86 219);
+  border-radius: 0.5rem;
+  color: #fff;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.link:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("../../../resources/icon-right-arrow.svg");
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("../../../resources/icon-right-arrow.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #fff;
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media screen and (max-width: 768.02px) {
+  .publications h2 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 607.02px) {
+  .title {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  .text {
+    font-size: 0.875rem;
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 576.02px) {
+  .card {
+    max-width: 280px;
+    margin-top: 20px;
+    flex-direction: column;
+    height: auto;
+  }
+  .image {
+    width: 280px;
+    height: auto;
+  }
+  .image img {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+  }
+  .text {
+    margin-top: 15px;
+    display: block;
+  }
+  .link {
+    width: 100%;
+    justify-content: center;
+  }
+}

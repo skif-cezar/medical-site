@@ -18,11 +18,26 @@
 }
 
 // `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 768.02px) {
+  .tests {
+    &__title {
+      margin-top: 35px;
+    }
+  }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
 @media screen and (max-width: 575.98px) {
   .tests {
+    padding-bottom: 20px;
+
     &__container {
       width: 100vw;
       padding: 0px 15px;
+    }
+    &__title {
+      font-size: 1.55rem;
+      margin-bottom: 20px;
     }
   }
 }

@@ -3,6 +3,8 @@ import {Link} from "react-scroll";
 import clsx from "clsx";
 import styles from "src/app/components/menu/Menu.module.scss";
 import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
+import {NavLink} from "react-router-dom";
+import {PUBLICATIONS_PAGE_PATH} from "src/app/logic/publication/PublicationPage";
 
 /**
  * Menu component
@@ -18,10 +20,17 @@ export const Menu: React.FC = () => {
 
   const [nav, setNav] = useState(false);
 
+  const closeMenu = (): void => {
+    setNav(!nav);
+  };
+
   return (
     <nav className={MENU_STYLES}>
       <ul
         className={nav ? ACTIVE_MENU_STYLES : MENU_LIST_STYLES}
+        onClick={closeMenu}
+        role="menu"
+        aria-hidden="true"
       >
         <li className={MENU_ITEM_STYLES}>
           <Link
@@ -32,6 +41,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             О Центре
           </Link>
@@ -45,6 +57,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Наши услуги
           </Link>
@@ -58,6 +73,9 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Сотрудники
           </Link>
@@ -71,16 +89,27 @@ export const Menu: React.FC = () => {
             duration={500}
             offset={-66}
             spy
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
           >
             Тесты
           </Link>
         </li>
+        <li className={MENU_ITEM_STYLES}>
+          <NavLink
+            to={PUBLICATIONS_PAGE_PATH}
+            className={({isActive}: {isActive: boolean}) => {return isActive ? ACTIVE_LINK_STYLES : MENU_LINK_STYLES;}}
+            onClick={closeMenu}
+            role="menuitem"
+            aria-hidden="true"
+          >
+            Публикации
+          </NavLink>
+        </li>
       </ul>
       <button
-        onClick={() => {
-          return setNav(!nav);
-        }}
-        className={MOBILE_BUTTON_STYLES}
+        onClick={closeMenu} className={MOBILE_BUTTON_STYLES}
         type="button"
       >
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
