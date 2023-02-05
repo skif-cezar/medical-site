@@ -55,6 +55,11 @@
   text-overflow: ellipsis;
   line-height: 1.2;
   margin-top: 10px;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  vertical-align: middle;
 }
 .link {
   display: inline-flex;
@@ -127,6 +132,7 @@
   }
   .text {
     margin-top: 15px;
+    display: block;
   }
   .link {
     width: 100%;
