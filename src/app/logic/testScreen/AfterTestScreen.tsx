@@ -20,7 +20,7 @@ export const AfterTestScreen: React.FC = () => {
   const RESULT_TITLE_STYLES = clsx(styles.result__title);
   const RESULT_TEXT_STYLES = clsx(styles.result__text);
 
-  const {message, score}: TestStoreInterface = useContext(TestContext);
+  const {message, score, currentTestId}: TestStoreInterface = useContext(TestContext);
 
   return (
     <section className={TEST_STYLES}>
@@ -28,7 +28,20 @@ export const AfterTestScreen: React.FC = () => {
       <article className={TEST_CONTAINER_STYLES}>
         <div className={RESULT_TITLE_STYLES}>{message["message"].title}</div>
         <div className={RESULT_TEXT_STYLES}>{message["message"].body}</div>
-        <div className={RESULT_TEXT_STYLES}>{`Количество набранных баллов: ${score}`}</div>
+        {currentTestId === "1" ? (
+          <>
+            <div className={RESULT_TEXT_STYLES}>{`Количество набранных баллов: ${score}`}</div>
+            <div className={RESULT_TEXT_STYLES}>
+              <p>Нет аутизма - менее 30 баллов</p>
+              <p>
+                Проявление аутизма от легкого до среднего (имеется в виду высокофункционирующий
+                аутизм или синдром Аспергера, особенно если общий балл от 30 до 33) - от 30 до 35
+                баллов
+              </p>
+              <p>Тяжелый аутизм - более 36 баллов</p>
+            </div>
+          </>
+        ) : undefined}
       </article>
     </section>
   );

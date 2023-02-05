@@ -33,27 +33,30 @@ export const TestScreen: React.FC = () => {
     setScore,
     setMessage,
     chekedAnswerCheckBox,
+    setChekedAnswerCheckBox,
     age,
+    setAge,
+    setCurrentTestId,
   }: TestStoreInterface = useContext(TestContext);
 
   const [isStatus, setIsStatus] = useState<boolean>(true);
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const resetCheckedAnswerId = () => {
-    return setCheckedAnswerValue(null);
+  const resetCheckedAnswerId = (): void => {
+    setCheckedAnswerValue(null);
+    setChekedAnswerCheckBox("");
   };
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const handleClick = () => {
+  const handleClick = (): void => {
     setCurrentRoundIndex(0);
     resetCheckedAnswerId();
     setIsStatus(false);
     setScore(0);
     setMessage({});
+    setAge(0);
   };
 
-  // eslint-disable-next-line @typescript-eslint/typedef
-  const {id} = useParams();
+  const {id}: {id: string | undefined} = useParams() as {id: string};
+  setCurrentTestId(id);
   const index = Number(id) - 1;
   const testData = data[index];
 
@@ -62,7 +65,7 @@ export const TestScreen: React.FC = () => {
       return;
     }
 
-    if(index === 2 && chekedAnswerCheckBox === null) {
+    if(index === 2 && chekedAnswerCheckBox === "" && currentRoundIndex !== 0) {
       return;
     }
 
@@ -79,14 +82,8 @@ export const TestScreen: React.FC = () => {
       }
     } else if (index === 2) {
       const maxAge = parseFloat(testData!.questions[currentRoundIndex].max);
-      // eslint-disable-next-line no-console
-      console.log("Max:", maxAge);
-      // eslint-disable-next-line no-console
-      console.log("AgeUser:", age);
 
-      if(chekedAnswerCheckBox === "Нет" && age > maxAge) {
-        // eslint-disable-next-line no-console
-        console.log("Ошибка");
+      if(chekedAnswerCheckBox === "Нет" && age! > maxAge) {
         setScore(score + 1);
       }
     }
@@ -94,8 +91,6 @@ export const TestScreen: React.FC = () => {
     if (isMoreQuestionsAvailable) {
       resetCheckedAnswerId();
       setCurrentRoundIndex(currentRoundIndex + 1);
-      // eslint-disable-next-line no-console
-      console.log(score);
     } else {
       if (index === 0) {
         // check test №1
