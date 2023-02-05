@@ -116,7 +116,13 @@ export const TestScreen: React.FC = () => {
           setMessage(testData!.messages[2]);
         }
       } else if (index === 2) {
-        setMessage(testData!.messages[0]);
+        if (score === 0) {
+          setMessage(testData!.messages[0]);
+        } else if (score > 1 && score < 4) {
+          setMessage(testData!.messages[1]);
+        } else if (score >= 4) {
+          setMessage(testData!.messages[2]);
+        }
       }
       navigation(AFTER_TEST_PAGE_PATH);
     }
